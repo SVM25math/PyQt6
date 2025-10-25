@@ -7,7 +7,7 @@
 
 PyQt6 - это набор Python-привязок для фреймворка Qt6. Приложение состоит из двух окон, каждое из которых образовано от базового класса QWidget.
 
-<img width="773" height="833" alt="image" src="https://github.com/user-attachments/assets/c36c03c3-828b-4bb4-836c-0d927de1b3b9" />
+<img width="773" height="833" alt="image" src="<img width="773" height="833" alt="image" src="https://github.com/user-attachments/assets/c494f2b5-275f-4d7a-afc1-596672a3d6a8" />
 
 <img width="793" height="836" alt="image" src="https://github.com/user-attachments/assets/bf37cbfc-5568-40b1-adce-4820faf28261" />
 
