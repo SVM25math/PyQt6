@@ -1,0 +1,129 @@
+import sys
+from PyQt6.QtWidgets import QApplication, QWidget, QLabel
+from PyQt6.QtGui import QPixmap, QFont
+
+x = -100
+y = -70
+class MainWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initializeUI()
+
+    def initializeUI(self):
+        """Настройте графический интерфейс приложения."""
+        self.setGeometry(100, 100, 630, 640)
+        self.setWindowTitle("Qlabel")
+        self.setUpMainWindow()
+        self.show()
+
+    def setUpMainWindow(self):
+        """Создайте QLabel для отображения в главном окне."""
+        hello_label = QLabel(self)
+        hello_label.setText("Приветик!")
+        hello_label.move(280, 23)
+
+        image = r"C:\MyFiles\pics\pic3.webp"
+        try:
+            with open(image):
+                world_label = QLabel(self)
+                pixmap = QPixmap(image)
+                world_label.setPixmap(pixmap)
+                world_label.move(0, 40)
+        except FileNotFoundError as error:
+            print(f"Image not found.\nError: {error}")
+
+
+class MainWindo(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.initializeUI()
+
+    def initializeUI(self):
+        """Настройки графического интерфейса приложения."""
+        self.setGeometry(550, 100, 1000, 1000)
+        self.setWindowTitle("User profile")
+        self.setUpMainWindow()
+        self.show()
+
+    def createImageLabels(self):
+        """Открывает файлы изображений и создаёт метки изображений."""
+        images = ["C:\MyFiles\pics\pic4.jpg"]
+        x_position = 0
+        y_position = 0
+
+        for image in images:
+            try:
+                with open(image):
+                    label = QLabel(self)
+                    pixmap = QPixmap(image)
+                    label.setPixmap(pixmap)
+                    label.move(x_position, y_position)
+                    x_position += 125  # увеличиваем позицию для следующего изображения по x
+                    y_position += 10  # увеличиваем позицию для следующего изображения по y
+            except FileNotFoundError:
+                print(f"Файл {image} не найден")
+            except Exception as e:
+                print(f"Ошибка при загрузке изображения {image}: {e}")
+
+    def setUpMainWindow(self):
+        """Создайте метки, которые будут отображаться в окне."""
+        self.createImageLabels()
+        user_label = QLabel(self)
+        user_label.setText("Арина Перепелкина")
+        user_label.setFont(QFont("Montserrat", 32))
+        user_label.move(120, 60)
+        user_label.setStyleSheet("color: white;")
+
+        bio_label = QLabel(self)
+        bio_label.setText("Биография:")
+        bio_label.setFont(QFont("Montserrat", 25))
+        bio_label.move(30, 500+x+y)
+        bio_label.setStyleSheet("color: white;")
+
+        about_label = QLabel(self)
+        about_label.setText("Студентка 2-го курса МАИ, М3О-236БВ-24")
+        about_label.setWordWrap(True)
+        about_label.setFont(QFont("Montserrat", 18))
+        about_label.move(30, 550+x+y)
+        about_label.setStyleSheet("color: white;")
+
+        skills_label = QLabel(self)
+        skills_label.setText("Умения:")
+        skills_label.setFont(QFont("Montserrat", 25))
+        skills_label.move(30, 615+x+y)
+        skills_label.setStyleSheet("color: white;")
+
+        languages_label = QLabel(self)
+        languages_label.setText("Python | SQL")
+        languages_label.setFont(QFont("Montserrat", 18))
+        languages_label.move(30, 660+x+y)
+        languages_label.setStyleSheet("color: white;")
+
+        experience_label = QLabel(self)
+        experience_label.setText("Опыт:")
+        experience_label.setFont(QFont("Montserrat", 25))
+        experience_label.move(30, 595+y)
+        experience_label.setStyleSheet("color: white;")
+
+        developer_label = QLabel(self)
+        developer_label.setText("Ozon job")
+        developer_label.setFont(QFont("Montserrat", 18))
+        developer_label.move(30, 640+y)
+        developer_label.setStyleSheet("color: white;")
+
+        dev_dates_label = QLabel(self)
+        dev_dates_label.setText("сентябрь '23 - октябрь '25")
+        dev_dates_label.setFont(QFont("Montserrat", 18))
+        dev_dates_label.move(30, 670+y)
+        dev_dates_label.setStyleSheet("color: white;")
+
+        driver_label = QLabel(self)
+
+
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window1 = MainWindo()
+    sys.exit(app.exec())
