@@ -11,7 +11,6 @@ PyQt6 - это набор Python-привязок для фреймворка Qt
 " />
 
 "https://github.com/user-attachments/assets/33c5f536-4e5d-4b77-a2e2-622102d52b49" />
-" />
 
 ### Импорты и зависимости
 
