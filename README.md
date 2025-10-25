@@ -1,4 +1,4 @@
-# PyQt6[README.md](https://github.com/user-attachments/files/23143543/README.md)
+# PyQt6
 # Структура кода библиотеки PyQt6 и описание программы
 
 
